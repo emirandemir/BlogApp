@@ -8,6 +8,9 @@ builder.Services.AddDbContext<BlogDbContext>(opt=>
     opt.UseSqlServer(builder.Configuration.GetConnectionString("Local"));
 });
 var app = builder.Build();
+
+app.UseStaticFiles();
+
 app.UseRouting();
 
 app.UseEndpoints(endpoints =>
